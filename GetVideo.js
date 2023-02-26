@@ -41,7 +41,7 @@ async function GetVideo(ytURL, q = "480") {
 
     const page = await browser.newPage();
     const totalStart = Date.now();
-    await page.goto(url, { timeout: 0 });
+    await page.goto(url);
 
     const formHandle = await page.waitForSelector("#search-form");
     await page.evaluate(
@@ -83,7 +83,7 @@ async function GetVideo(ytURL, q = "480") {
       "a#asuccess.form-control.mesg-convert.success"
     );
     // console.log(aHandle);
-    await promiseSetTimeOut(2000);
+    await promiseSetTimeOut(5000);
     const dlink = await page.evaluate((e) => e.getAttribute("href"), aHandle);
 
     browser.close();
