@@ -2,8 +2,8 @@ const { load } = require("cheerio"); //?
 const tiny = require("tinyurl"); //?
 const regex = require("./utils");
 const superagent = require("superagent"); //?
-// const puppeteer = require("puppeteer-core");
-const puppeteer = require("puppeteer");
+const puppeteer = require("puppeteer-core");
+// const puppeteer = require("puppeteer");
 // const fs=require('fs')
 
 const {
@@ -34,12 +34,12 @@ async function GetAudio(ytURL) {
 
     // console.log('tomp3URL: ',url)
 
-    // const browser = await puppeteer.connect(options);
-    const browser = await puppeteer.launch({
-      args: ["--no-sandbox"],
-      executablePath: "./chromium/chrome-win/chrome.exe",
-      headless: false,
-    });
+    const browser = await puppeteer.connect(options);
+    // const browser = await puppeteer.launch({
+    //   args: ["--no-sandbox"],
+    //   executablePath: "./chromium/chrome-win/chrome.exe",
+    //   headless: false,
+    // });
     // .then(async(browser)=>{
     const page = await browser.newPage();
     const totalStart = Date.now();
