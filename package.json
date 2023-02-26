@@ -21,7 +21,7 @@
     "tinyurl": "^1.1.7"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20",
-    "puppeteer": "^19.7.2"
+    "nodemon": "^2.0.20"
+    
   }
 }
